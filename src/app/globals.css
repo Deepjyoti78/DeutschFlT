@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --bg-main: #FBF8F5;
+  --bg-warm: #F6F5EC;
+  --bg-cream: #F4F3E9;
+  --forest: #174D2A;
+  --forest-dark: #123E27;
+  --forest-heading: #183B2A;
+  --olive: #91AC32;
+  --olive-dark: #7B9628;
+  --lime: #B9D348;
+  --body: #626765;
+  --muted: #888C87;
+  --border: #E8E6DD;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FBF8F5;
+  color: #626765;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FBF8F5;
+  color: #626765;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Serif Typography */
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+/* Organic card styling matching Image 1 */
+.organic-card-shape {
+  border-radius: 24px;
+  background: #F4F3E9;
+  border: 1px solid #E8E6DD;
+}
+
+/* Pill button transitions */
+.btn-pill {
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.btn-pill:hover {
+  transform: translateY(-2px);
+}
+
+.btn-pill:active {
+  transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D3CFBF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #91AC32;
+}
+
+/* Hide scrollbar for clean horizontal tabs on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
