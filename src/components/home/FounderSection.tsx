@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Mic, MessageSquare, Award } from 'lucide-react';
+import { Mic, MessageSquare, Award, Sparkles, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import { SITE_CONFIG } from '@/data/site';
@@ -79,7 +79,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenBooking })
             </button>
           </motion.div>
 
-          {/* Right Column: Large Portrait Container */}
+          {/* Right Column: Premium Framed Photograph Card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -87,34 +87,50 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenBooking })
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 order-1 lg:order-2 flex justify-center"
           >
-            <div className="relative w-full max-w-[420px]">
-              {/* Organic Soft-Green Backdrop */}
-              <div className="absolute inset-0 bg-[#EBF2D6] rounded-[38px] rotate-2 transform transition-transform duration-500 hover:rotate-3" />
+            <div className="relative w-full max-w-[400px]">
+              {/* Organic Soft-Green Backdrop Shape */}
+              <div className="absolute inset-0 bg-[#E8EED8] rounded-[36px] rotate-2 transform transition-transform duration-500 hover:rotate-3" />
 
-              <div className="relative z-10 bg-[#F5F8EC] border-2 border-[#E1ECD0] rounded-[34px] p-6 shadow-md text-center">
-                <div className="relative w-full h-[360px] sm:h-[380px] rounded-[24px] overflow-hidden bg-gradient-to-b from-[#E7EED7] to-[#D5E4BD] flex items-center justify-center">
-                  {/* Portrait Silhouette/Illustration with clean typography */}
-                  <div className="flex flex-col items-center justify-center p-6 text-center">
-                    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#174D2A] text-white flex items-center justify-center text-3xl font-editorial shadow-inner mb-4">
-                      UD
+              <div className="relative z-10 bg-[#FAF9F2] border border-[#E3DECF] rounded-[32px] p-4 sm:p-5 shadow-sm text-center">
+                {/* Photo Container */}
+                <div className="relative w-full aspect-[4/5] rounded-[22px] overflow-hidden shadow-sm group bg-[#F0EDE1]">
+                  <img
+                    src="/images/utkal-portrait.png"
+                    alt="Utkal Das — Founder & Lead German Coach at DeutschFIT"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+
+                  {/* Floating Top Badge */}
+                  <div className="absolute top-3.5 right-3.5 z-20 bg-white/95 backdrop-blur-md border border-white/80 text-forest text-[11px] font-semibold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5">
+                    <span>🇩🇪</span>
+                    <span>CEFR A1–C1 Coach</span>
+                  </div>
+
+                  {/* Bottom Editorial Caption Overlay */}
+                  <div className="absolute inset-x-3 bottom-3 z-20 bg-black/65 backdrop-blur-md border border-white/15 rounded-xl p-3.5 text-left text-white shadow-lg">
+                    <div className="flex items-center justify-between">
+                      <div className="font-editorial text-lg text-white font-semibold">
+                        Utkal Das
+                      </div>
+                      <span className="text-[10px] uppercase tracking-wider font-semibold text-[#B9D348] bg-white/10 px-2 py-0.5 rounded-full">
+                        Founder
+                      </span>
                     </div>
-                    <div className="font-editorial text-2xl text-forest-heading font-semibold">
-                      Utkal Das
+                    <div className="text-[11px] text-white/90 font-medium mt-0.5">
+                      Lead German Language Trainer & Coach
                     </div>
-                    <div className="text-xs text-olive-dark font-medium tracking-wide uppercase mt-1">
-                      Lead German Coach & Mentor
-                    </div>
-                    <p className="text-xs text-body mt-3 max-w-[240px] leading-relaxed">
-                      "Speaking German is not about perfection — it is about courage, structure, and daily momentum."
+                    <p className="text-[11px] text-white/75 mt-1.5 italic leading-tight">
+                      "Speaking German is about courage, structure, and daily momentum."
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between px-2 text-xs text-muted">
+                {/* Card Sub-bar */}
+                <div className="mt-3.5 pt-3 border-t border-border-subtle flex items-center justify-between px-2 text-xs text-muted">
                   <span className="flex items-center gap-1.5 text-forest font-semibold">
-                    <Award className="w-4 h-4 text-olive" /> Verified CEFR Coach
+                    <Award className="w-4 h-4 text-olive" /> Goethe & ÖSD Prep
                   </span>
-                  <span>1-on-1 & Small Batches</span>
+                  <span className="text-olive-dark font-medium">1-on-1 & Small Batches</span>
                 </div>
               </div>
             </div>
