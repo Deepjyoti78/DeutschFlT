@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { X, CheckCircle, Sparkles } from 'lucide-react';
 import { PRICING_DATA } from '@/data/pricing';
-import { cn } from '@/lib/utils';
 
 interface EnrollmentModalProps {
   isOpen: boolean;
@@ -35,7 +34,6 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate seamless booking
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
@@ -52,14 +50,14 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-forest-dark/40 backdrop-blur-sm animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/50 backdrop-blur-sm animate-fade-in">
       <div
-        className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto no-scrollbar bg-[#FBF8F5] border border-border-subtle rounded-3xl shadow-2xl p-6 sm:p-8"
+        className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto no-scrollbar bg-[#F9F5F2] border border-[#E8DFD8] rounded-3xl shadow-2xl p-6 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={handleReset}
-          className="absolute top-5 right-5 p-2 rounded-full text-muted hover:text-forest-dark hover:bg-forest/5 transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-full text-muted hover:text-maroon-dark hover:bg-maroon/5 transition-colors"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -67,24 +65,24 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({
 
         {submitted ? (
           <div className="text-center py-8">
-            <div className="w-16 h-16 bg-lime-soft text-forest rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircle className="w-9 h-9 text-forest" />
+            <div className="w-16 h-16 bg-[#F8ECE9] text-maroon rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="w-9 h-9 text-maroon" />
             </div>
             <h3 className="font-editorial text-2xl sm:text-3xl text-forest-heading mb-2">
               {isMiniLesson ? 'Vielen Dank! Mini Lesson Booked' : 'Anmeldung Erhalten!'}
             </h3>
             <p className="text-body text-sm sm:text-base leading-relaxed mb-6">
-              Thank you, <strong className="text-forest-dark">{name}</strong>. Coach Utkal Das will reach out to you at <strong className="text-forest-dark">{email}</strong> within 24 hours with your preparation materials and meeting link.
+              Thank you, <strong className="text-maroon">{name}</strong>. Coach Utkal Das will reach out to you at <strong className="text-maroon">{email}</strong> within 24 hours with your preparation materials and meeting link.
             </p>
-            <div className="p-4 bg-bg-cream rounded-2xl border border-border-subtle mb-6 text-left text-xs text-muted">
-              <p className="font-semibold text-forest mb-1">
+            <div className="p-4 bg-[#F5EFE9] rounded-2xl border border-[#E8DFD8] mb-6 text-left text-xs text-muted">
+              <p className="font-semibold text-maroon mb-1">
                 {isMiniLesson ? 'Complimentary 25-min 1-on-1 Session' : `Selected Course: ${currentPlan.level} — ${currentPlan.category}`}
               </p>
               <p>Direct Coach Contact: utkaldasdeutchland@gmail.com | +91 60008 70481</p>
             </div>
             <button
               onClick={handleReset}
-              className="w-full py-3 px-6 rounded-full bg-forest text-white font-medium hover:bg-forest-dark transition-colors"
+              className="w-full py-3 px-6 rounded-full bg-maroon text-white font-medium hover:bg-maroon-dark transition-colors"
             >
               Done & Return to Site
             </button>
@@ -92,7 +90,7 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({
         ) : (
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lime-soft text-forest text-xs font-semibold">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F8ECE9] text-maroon text-xs font-semibold">
                 <Sparkles className="w-3.5 h-3.5" />
                 {isMiniLesson ? 'Free 25-Min Trial' : 'Course Enrollment'}
               </span>
@@ -116,7 +114,7 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({
                   <select
                     value={selectedLevel}
                     onChange={(e) => setSelectedLevel(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-white border border-border-subtle text-forest-heading text-sm focus:outline-none focus:border-forest"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E8DFD8] text-forest-heading text-sm focus:outline-none focus:border-maroon"
                   >
                     {PRICING_DATA.map((plan) => (
                       <option key={plan.id} value={plan.level}>
@@ -137,7 +135,7 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({
                   placeholder="e.g. Maya Sharma"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-border-subtle text-forest-heading text-sm focus:outline-none focus:border-forest"
+                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E8DFD8] text-forest-heading text-sm focus:outline-none focus:border-maroon"
                 />
               </div>
 
@@ -152,7 +150,7 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({
                     placeholder="you@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-white border border-border-subtle text-forest-heading text-sm focus:outline-none focus:border-forest"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E8DFD8] text-forest-heading text-sm focus:outline-none focus:border-maroon"
                   />
                 </div>
                 <div>
@@ -165,7 +163,7 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({
                     placeholder="+91..."
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-white border border-border-subtle text-forest-heading text-sm focus:outline-none focus:border-forest"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E8DFD8] text-forest-heading text-sm focus:outline-none focus:border-maroon"
                   />
                 </div>
               </div>
@@ -179,7 +177,7 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({
                   placeholder="e.g. Master's in Munich, Goethe B2 prep, or work relocation..."
                   value={note}
                   onChange={(e) => setNote(e.target.value)}
-                  className="w-full px-4 py-2 rounded-xl bg-white border border-border-subtle text-forest-heading text-sm focus:outline-none focus:border-forest resize-none"
+                  className="w-full px-4 py-2 rounded-xl bg-white border border-[#E8DFD8] text-forest-heading text-sm focus:outline-none focus:border-maroon resize-none"
                 />
               </div>
 
@@ -187,7 +185,7 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3 px-6 rounded-full bg-forest text-white font-medium hover:bg-forest-dark transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg disabled:opacity-70"
+                  className="w-full py-3 px-6 rounded-full bg-maroon text-white font-medium hover:bg-maroon-dark transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg disabled:opacity-70"
                 >
                   {loading ? (
                     'Processing...'

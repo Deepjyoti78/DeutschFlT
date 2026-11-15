@@ -23,7 +23,7 @@ export const Pricing: React.FC<PricingProps> = ({ onEnroll }) => {
       : PRICING_DATA.filter((item) => item.group === activeTab);
 
   return (
-    <section id="pricing" className="py-20 lg:py-28 bg-[#F6F5EC]">
+    <section id="pricing" className="py-20 lg:py-28 bg-[#F5EFE9]">
       <Container>
         <SectionHeading
           eyebrow="COURSE PRICING"
@@ -41,8 +41,8 @@ export const Pricing: React.FC<PricingProps> = ({ onEnroll }) => {
               className={cn(
                 'px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 active:scale-95',
                 activeTab === tab
-                  ? 'bg-forest text-white shadow-sm'
-                  : 'bg-white text-forest-heading border border-border-subtle hover:border-olive hover:bg-forest/5'
+                  ? 'bg-maroon text-white shadow-sm'
+                  : 'bg-white text-forest-heading border border-[#E8DFD8] hover:border-maroon hover:bg-maroon/5'
               )}
             >
               {tab === 'All' ? 'View All Levels' : tab}
@@ -62,14 +62,14 @@ export const Pricing: React.FC<PricingProps> = ({ onEnroll }) => {
                 transition={{ duration: 0.28, delay: idx * 0.04 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
                 className={cn(
-                  'rounded-[24px] p-6 sm:p-7 border flex flex-col justify-between transition-shadow duration-300 relative bg-[#FBF8F5]',
+                  'rounded-[24px] p-6 sm:p-7 border flex flex-col justify-between transition-shadow duration-300 relative bg-[#FAF5F0]',
                   item.popular
-                    ? 'border-olive shadow-hover'
-                    : 'border-border-subtle hover:border-olive/40 hover:shadow-hover'
+                    ? 'border-maroon shadow-hover ring-1 ring-maroon/20'
+                    : 'border-[#E8DFD8] hover:border-maroon/40 hover:shadow-hover'
                 )}
               >
                 {item.popular && (
-                  <div className="absolute top-4 right-5 px-3 py-0.5 rounded-full bg-lime-soft text-forest text-[11px] font-semibold uppercase tracking-wider flex items-center gap-1">
+                  <div className="absolute top-4 right-5 px-3 py-0.5 rounded-full bg-[#F6E4DF] text-maroon text-[11px] font-semibold uppercase tracking-wider flex items-center gap-1">
                     <Sparkles className="w-3 h-3" />
                     <span>Popular</span>
                   </div>
@@ -80,25 +80,25 @@ export const Pricing: React.FC<PricingProps> = ({ onEnroll }) => {
                     <span className="font-editorial text-2xl text-forest-heading font-semibold">
                       {item.level}
                     </span>
-                    <span className="text-xs px-2.5 py-0.5 rounded-md bg-[#ECEFE4] text-olive-dark font-medium">
+                    <span className="text-xs px-2.5 py-0.5 rounded-md bg-[#F8ECE9] text-terracotta font-medium">
                       {item.category}
                     </span>
                   </div>
 
                   <div className="flex items-baseline gap-1 my-4">
-                    <span className="font-editorial text-3xl sm:text-4xl text-forest font-semibold">
+                    <span className="font-editorial text-3xl sm:text-4xl text-maroon font-semibold">
                       {item.currency}
                       {item.price}
                     </span>
                     <span className="text-xs text-muted">/ standard level module</span>
                   </div>
 
-                  <div className="h-[1px] bg-border-subtle my-5" />
+                  <div className="h-[1px] bg-[#E8DFD8] my-5" />
 
                   <ul className="space-y-3 mb-6">
                     {item.features.map((feat, i) => (
                       <li key={i} className="flex items-start gap-2.5">
-                        <div className="w-4 h-4 rounded-full bg-[#E5EFCF] text-forest flex items-center justify-center shrink-0 mt-0.5">
+                        <div className="w-4 h-4 rounded-full bg-[#F8ECE9] text-maroon flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="w-3 h-3 stroke-[2.5]" />
                         </div>
                         <span className="text-body text-xs sm:text-sm leading-relaxed">
@@ -112,7 +112,7 @@ export const Pricing: React.FC<PricingProps> = ({ onEnroll }) => {
                 <div className="pt-2">
                   <button
                     onClick={() => onEnroll(item.level)}
-                    className="btn-pill w-full py-3 px-5 rounded-full font-medium text-xs sm:text-sm bg-forest hover:bg-forest-dark text-white flex items-center justify-center gap-1.5 shadow-xs transition-all active:scale-[0.98]"
+                    className="btn-pill w-full py-3 px-5 rounded-full font-medium text-xs sm:text-sm bg-maroon hover:bg-maroon-dark text-white flex items-center justify-center gap-1.5 shadow-xs transition-all active:scale-[0.98]"
                   >
                     <span>Enroll in {item.level}</span>
                     <span>↗</span>
@@ -125,7 +125,7 @@ export const Pricing: React.FC<PricingProps> = ({ onEnroll }) => {
 
         <div className="text-center mt-10 text-xs text-muted">
           Need help deciding between standard and intensive batch options?{' '}
-          <a href="#contact" className="text-forest underline font-medium hover:text-forest-dark">
+          <a href="#contact" className="text-maroon underline font-medium hover:text-maroon-dark">
             Ask our team directly
           </a>.
         </div>

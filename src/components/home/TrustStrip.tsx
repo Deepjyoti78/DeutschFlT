@@ -11,7 +11,7 @@ export const TrustStrip: React.FC = () => {
   ];
 
   return (
-    <section className="py-8 sm:py-10 border-y border-border-subtle/80 bg-[#FBF8F5]">
+    <section className="py-8 sm:py-10 border-y border-[#E8DFD8]/80 bg-[#F9F5F2]">
       <Container>
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
           <div className="text-center lg:text-left shrink-0">
@@ -24,7 +24,7 @@ export const TrustStrip: React.FC = () => {
             {standards.map((item, idx) => (
               <React.Fragment key={item.label}>
                 <div className="flex flex-col items-center sm:items-start group">
-                  <span className="font-editorial text-lg sm:text-xl font-normal text-forest-heading/85 group-hover:text-forest transition-colors">
+                  <span className="font-editorial text-lg sm:text-xl font-normal text-forest-heading/85 group-hover:text-maroon transition-colors">
                     {item.label}
                   </span>
                   <span className="text-[10px] uppercase tracking-wider text-muted font-medium">

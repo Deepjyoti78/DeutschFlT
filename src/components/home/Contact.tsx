@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { Mail, Phone, MapPin, CheckCircle, Send, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { SITE_CONFIG } from '@/data/site';
 
@@ -32,7 +32,6 @@ export const Contact: React.FC = () => {
 
   const onSubmit = (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Real interaction simulation
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -41,18 +40,18 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-[#F6F5EC]">
+    <section id="contact" className="py-20 lg:py-28 bg-[#F5EFE9]">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
           {/* Left Column: Information */}
           <div className="lg:col-span-5 text-left">
-            <div className="inline-flex items-center gap-2 mb-3 text-xs sm:text-sm font-semibold tracking-wider uppercase text-olive-dark">
-              <span className="w-6 h-[2px] bg-olive inline-block rounded-full" />
+            <div className="inline-flex items-center gap-2 mb-3 text-xs sm:text-sm font-semibold tracking-wider uppercase text-terracotta">
+              <span className="w-6 h-[2px] bg-maroon inline-block rounded-full" />
               <span>Get In Touch</span>
             </div>
 
             <h2 className="font-editorial text-3xl sm:text-4xl md:text-[42px] leading-tight text-forest-heading mb-4 font-normal">
-              Let's Start a <span className="italic text-olive-dark">Conversation.</span>
+              Let's Start a <span className="italic text-maroon">Conversation.</span>
             </h2>
 
             <p className="text-body text-base sm:text-lg leading-relaxed mb-8">
@@ -61,7 +60,7 @@ export const Contact: React.FC = () => {
 
             <div className="space-y-5 mb-8">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-[#E5EFCF] text-forest flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-10 h-10 rounded-full bg-[#F8ECE9] text-maroon flex items-center justify-center shrink-0 mt-0.5">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
@@ -70,7 +69,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <a
                     href={`mailto:${SITE_CONFIG.email}`}
-                    className="text-forest-heading font-medium hover:text-forest transition-colors text-sm sm:text-base"
+                    className="text-forest-heading font-medium hover:text-maroon transition-colors text-sm sm:text-base"
                   >
                     {SITE_CONFIG.email}
                   </a>
@@ -78,7 +77,7 @@ export const Contact: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-[#E5EFCF] text-forest flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-10 h-10 rounded-full bg-[#F8ECE9] text-maroon flex items-center justify-center shrink-0 mt-0.5">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -87,7 +86,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <a
                     href={`tel:${SITE_CONFIG.phone}`}
-                    className="text-forest-heading font-medium hover:text-forest transition-colors text-sm sm:text-base"
+                    className="text-forest-heading font-medium hover:text-maroon transition-colors text-sm sm:text-base"
                   >
                     {SITE_CONFIG.phoneDisplay}
                   </a>
@@ -95,7 +94,7 @@ export const Contact: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-[#E5EFCF] text-forest flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-10 h-10 rounded-full bg-[#F8ECE9] text-maroon flex items-center justify-center shrink-0 mt-0.5">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -109,7 +108,7 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-5 bg-white/70 border border-border-subtle rounded-2xl">
+            <div className="p-5 bg-white/70 border border-[#E8DFD8] rounded-2xl">
               <p className="text-xs text-muted leading-relaxed">
                 Coach Utkal Das directly reviews all prospective student enquiries. We respond within 24 hours on business days.
               </p>
@@ -118,10 +117,10 @@ export const Contact: React.FC = () => {
 
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
-            <div className="bg-[#FBF8F5] border border-border-subtle rounded-[28px] p-7 sm:p-10 shadow-sm relative">
+            <div className="bg-[#FAF5F0] border border-[#E8DFD8] rounded-[28px] p-7 sm:p-10 shadow-sm relative">
               {isSubmitted ? (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 bg-[#E5EFCF] text-forest rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-[#F8ECE9] text-maroon rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="w-9 h-9" />
                   </div>
                   <h3 className="font-editorial text-2xl sm:text-3xl text-forest-heading mb-2">
@@ -132,7 +131,7 @@ export const Contact: React.FC = () => {
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="btn-pill px-6 py-2.5 rounded-full bg-forest text-white text-sm font-medium hover:bg-forest-dark transition-all"
+                    className="btn-pill px-6 py-2.5 rounded-full bg-maroon text-white text-sm font-medium hover:bg-maroon-dark transition-all"
                   >
                     Send Another Message
                   </button>
@@ -156,7 +155,7 @@ export const Contact: React.FC = () => {
                         className={`w-full px-4 py-3 rounded-xl bg-white border text-sm text-forest-heading focus:outline-none transition-colors ${
                           errors.fullName
                             ? 'border-red-400 focus:border-red-500'
-                            : 'border-border-subtle focus:border-forest'
+                            : 'border-[#E8DFD8] focus:border-maroon'
                         }`}
                       />
                       {errors.fullName && (
@@ -182,7 +181,7 @@ export const Contact: React.FC = () => {
                         className={`w-full px-4 py-3 rounded-xl bg-white border text-sm text-forest-heading focus:outline-none transition-colors ${
                           errors.email
                             ? 'border-red-400 focus:border-red-500'
-                            : 'border-border-subtle focus:border-forest'
+                            : 'border-[#E8DFD8] focus:border-maroon'
                         }`}
                       />
                       {errors.email && (
@@ -209,7 +208,7 @@ export const Contact: React.FC = () => {
                       className={`w-full px-4 py-3 rounded-xl bg-white border text-sm text-forest-heading focus:outline-none transition-colors ${
                         errors.subject
                           ? 'border-red-400 focus:border-red-500'
-                          : 'border-border-subtle focus:border-forest'
+                          : 'border-[#E8DFD8] focus:border-maroon'
                       }`}
                     />
                     {errors.subject && (
@@ -235,7 +234,7 @@ export const Contact: React.FC = () => {
                       className={`w-full px-4 py-3 rounded-xl bg-white border text-sm text-forest-heading focus:outline-none transition-colors resize-none ${
                         errors.message
                           ? 'border-red-400 focus:border-red-500'
-                          : 'border-border-subtle focus:border-forest'
+                          : 'border-[#E8DFD8] focus:border-maroon'
                       }`}
                     />
                     {errors.message && (
@@ -249,7 +248,7 @@ export const Contact: React.FC = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="btn-pill w-full py-3.5 px-6 rounded-full bg-forest hover:bg-forest-dark text-white font-medium text-sm sm:text-base flex items-center justify-center gap-2 shadow-sm transition-all disabled:opacity-70"
+                      className="btn-pill w-full py-3.5 px-6 rounded-full bg-maroon hover:bg-maroon-dark text-white font-medium text-sm sm:text-base flex items-center justify-center gap-2 shadow-sm transition-all disabled:opacity-70"
                     >
                       {isSubmitting ? (
                         'Sending Message...'

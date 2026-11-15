@@ -5,7 +5,6 @@ import { Plus, Minus } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { FAQS_DATA } from '@/data/faqs';
-import { cn } from '@/lib/utils';
 
 export const FAQ: React.FC = () => {
   const [openIds, setOpenIds] = useState<string[]>(['prior-knowledge']);
@@ -17,7 +16,7 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 lg:py-28 bg-[#FBF8F5]">
+    <section id="faq" className="py-20 lg:py-28 bg-[#F9F5F2]">
       <Container size="narrow">
         <SectionHeading
           eyebrow="NEED HELP?"
@@ -32,7 +31,7 @@ export const FAQ: React.FC = () => {
             return (
               <div
                 key={faq.id}
-                className="bg-bg-cream border border-border-subtle rounded-2xl overflow-hidden transition-all duration-200 hover:border-olive/40"
+                className="bg-[#F5EFE9] border border-[#E8DFD8] rounded-2xl overflow-hidden transition-all duration-200 hover:border-maroon/40"
               >
                 <button
                   onClick={() => toggleAccordion(faq.id)}
@@ -42,17 +41,17 @@ export const FAQ: React.FC = () => {
                   <span className="font-editorial text-lg sm:text-xl text-forest-heading font-medium">
                     {faq.question}
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-white text-forest flex items-center justify-center shrink-0 border border-border-subtle transition-transform">
+                  <div className="w-8 h-8 rounded-full bg-white text-maroon flex items-center justify-center shrink-0 border border-[#E8DFD8] transition-transform">
                     {isOpen ? (
-                      <Minus className="w-4 h-4 text-olive" />
+                      <Minus className="w-4 h-4 text-maroon" />
                     ) : (
-                      <Plus className="w-4 h-4 text-olive" />
+                      <Plus className="w-4 h-4 text-maroon" />
                     )}
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-body text-sm sm:text-base leading-relaxed border-t border-border-subtle/50">
+                  <div className="px-6 pb-6 pt-1 text-body text-sm sm:text-base leading-relaxed border-t border-[#E8DFD8]/50">
                     <p>{faq.answer}</p>
                   </div>
                 )}
@@ -67,7 +66,7 @@ export const FAQ: React.FC = () => {
             Still have questions? We're happy to help.{' '}
             <a
               href="#contact"
-              className="text-forest font-semibold hover:text-forest-dark inline-flex items-center gap-1 underline underline-offset-4 ml-1"
+              className="text-maroon font-semibold hover:text-maroon-dark inline-flex items-center gap-1 underline underline-offset-4 ml-1"
             >
               <span>Contact Our Team</span>
               <span>↗</span>

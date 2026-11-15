@@ -47,7 +47,7 @@ export const COURSES_DATA: CourseTier[] = [
       'Targeted B1/B2 exam preparation (Goethe-Zertifikat / ÖSD)',
     ],
     ctaLabel: 'Explore Intermediate ↗',
-    accentBg: 'bg-[#F2F6E6] border-olive/30',
+    accentBg: 'bg-[#FBF1EE] border-maroon/30',
   },
   {
     id: 'advanced',

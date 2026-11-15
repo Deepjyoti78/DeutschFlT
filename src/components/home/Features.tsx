@@ -40,7 +40,7 @@ export const Features: React.FC = () => {
   };
 
   return (
-    <section id="features" className="py-20 lg:py-28 bg-[#FBF8F5] overflow-hidden">
+    <section id="features" className="py-20 lg:py-28 bg-[#F9F5F2] overflow-hidden">
       <Container>
         <SectionHeading
           eyebrow="THE LEARNING EXPERIENCE"
@@ -60,13 +60,13 @@ export const Features: React.FC = () => {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.4, delay: (idx % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="bg-bg-cream border border-border-subtle rounded-[22px] p-6 sm:p-7 flex flex-col justify-between transition-shadow duration-300 hover:shadow-hover hover:border-olive/40 group"
+                className="bg-[#F5EFE9] border border-[#E8DFD8] rounded-[22px] p-6 sm:p-7 flex flex-col justify-between transition-shadow duration-300 hover:shadow-hover hover:border-maroon/40 group"
               >
                 <div>
-                  <div className="w-11 h-11 rounded-xl bg-[#EAF2D7] text-forest flex items-center justify-center mb-5 transition-transform group-hover:scale-110">
+                  <div className="w-11 h-11 rounded-xl bg-[#F8ECE9] text-maroon flex items-center justify-center mb-5 transition-transform group-hover:scale-110">
                     <Icon className="w-5 h-5 stroke-[1.8]" />
                   </div>
-                  <h3 className="font-editorial text-lg sm:text-xl text-forest-heading mb-2 group-hover:text-forest transition-colors">
+                  <h3 className="font-editorial text-lg sm:text-xl text-forest-heading mb-2 group-hover:text-maroon transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-body text-xs sm:text-sm leading-relaxed">

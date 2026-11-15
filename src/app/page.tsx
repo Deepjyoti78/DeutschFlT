@@ -44,7 +44,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FBF8F5] text-body selection:bg-lime/30 selection:text-forest-dark">
+    <div className="min-h-screen flex flex-col bg-[#F9F5F2] text-body selection:bg-maroon/20 selection:text-maroon-dark">
       {/* 1. Navbar */}
       <Navbar onOpenBooking={handleOpenMiniLesson} />
 

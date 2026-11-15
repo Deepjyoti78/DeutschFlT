@@ -12,7 +12,7 @@ interface HowItWorksProps {
 
 export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenBooking }) => {
   return (
-    <section className="py-20 lg:py-28 bg-[#F6F5EC] overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[#F5EFE9] overflow-hidden">
       <Container>
         <SectionHeading
           eyebrow="YOUR LEARNING JOURNEY"
@@ -25,7 +25,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenBooking }) => {
         <div className="relative max-w-6xl mx-auto mb-14">
           {/* Subtle horizontal connector on desktop */}
           <div
-            className="hidden lg:block absolute top-7 left-12 right-12 h-[2px] bg-[#DFE6CB] z-0"
+            className="hidden lg:block absolute top-7 left-12 right-12 h-[2px] bg-[#EED5CF] z-0"
             aria-hidden="true"
           />
 
@@ -38,10 +38,10 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenBooking }) => {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.45, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="bg-[#FBF8F5] border border-border-subtle rounded-[22px] p-6 flex flex-col justify-between transition-shadow duration-300 hover:shadow-hover"
+                className="bg-[#FAF5F0] border border-[#E8DFD8] rounded-[22px] p-6 flex flex-col justify-between transition-shadow duration-300 hover:shadow-hover"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-full bg-forest text-white flex items-center justify-center font-bold text-sm tracking-wider mb-5 shadow-xs">
+                  <div className="w-12 h-12 rounded-full bg-maroon text-white flex items-center justify-center font-bold text-sm tracking-wider mb-5 shadow-xs">
                     {step.step}
                   </div>
                   <h3 className="font-editorial text-lg text-forest-heading mb-2">
@@ -60,7 +60,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenBooking }) => {
         <div className="text-center">
           <button
             onClick={onOpenBooking}
-            className="btn-pill inline-flex items-center gap-2 font-medium text-xs sm:text-sm px-7 py-3 rounded-full bg-forest hover:bg-forest-dark text-white shadow-sm transition-all active:scale-[0.98]"
+            className="btn-pill inline-flex items-center gap-2 font-medium text-xs sm:text-sm px-7 py-3 rounded-full bg-maroon hover:bg-maroon-dark text-white shadow-sm transition-all active:scale-[0.98]"
           >
             <span>Start Your Journey</span>
             <span>↗</span>

@@ -21,7 +21,7 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseClasses =
-    'inline-flex items-center justify-center font-medium rounded-full transition-all duration-200 cursor-pointer select-none active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-forest focus-visible:outline-offset-2';
+    'inline-flex items-center justify-center font-medium rounded-full transition-all duration-200 cursor-pointer select-none active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-maroon focus-visible:outline-offset-2';
 
   const sizeClasses = {
     sm: 'text-xs sm:text-sm px-4 py-2 gap-1.5',
@@ -31,13 +31,13 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
 
   const variantClasses = {
     primary:
-      'bg-forest hover:bg-forest-dark text-white shadow-sm hover:shadow-md hover:-translate-y-0.5',
+      'bg-maroon hover:bg-maroon-dark text-white shadow-sm hover:shadow-md hover:-translate-y-0.5',
     secondary:
-      'bg-[#F6F5EC] hover:bg-[#EFECE0] text-forest border border-border-strong/70 hover:border-olive hover:-translate-y-0.5',
+      'bg-[#F5EFE9] hover:bg-[#EFE8E0] text-forest-heading border border-[#E8DFD8] hover:border-maroon hover:-translate-y-0.5',
     ghost:
-      'bg-transparent hover:bg-forest/5 text-forest-heading',
+      'bg-transparent hover:bg-maroon/5 text-forest-heading',
     lime:
-      'bg-lime hover:bg-lime/90 text-forest-dark font-semibold shadow-sm hover:-translate-y-0.5',
+      'bg-maroon hover:bg-maroon-dark text-white font-semibold shadow-sm hover:-translate-y-0.5',
   };
 
   const combinedClassName = cn(

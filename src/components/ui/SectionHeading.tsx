@@ -31,11 +31,11 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       {eyebrow && (
         <div
           className={cn(
-            'inline-flex items-center gap-2 mb-3 text-xs md:text-sm font-semibold tracking-wider uppercase text-olive-dark',
+            'inline-flex items-center gap-2 mb-3 text-xs md:text-sm font-semibold tracking-wider uppercase text-terracotta',
             align === 'center' ? 'justify-center' : 'justify-start'
           )}
         >
-          <span className="w-6 h-[2px] bg-olive inline-block rounded-full" />
+          <span className="w-6 h-[2px] bg-maroon inline-block rounded-full" />
           <span>{eyebrow}</span>
         </div>
       )}
@@ -47,7 +47,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       >
         {title}
         {italicWord && (
-          <span className="italic text-olive-dark ml-2 font-normal font-editorial">
+          <span className="italic text-maroon ml-2 font-normal font-editorial">
             {italicWord}
           </span>
         )}
