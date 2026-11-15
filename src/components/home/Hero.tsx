@@ -14,9 +14,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
       className="relative pt-20 sm:pt-28 pb-14 lg:pb-20 overflow-hidden bg-[#F9F5F2]"
     >
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* Left Column — 50% on desktop */}
-          <div className="lg:col-span-6 text-left z-10 lg:-mt-4 xl:-mt-6">
+          <div className="lg:col-span-6 text-left z-10 lg:-mt-3 xl:-mt-5">
             {/* Eyebrow — Maroon / Terracotta line and text */}
             <div className="inline-flex items-center gap-2 mb-3 text-[10.5px] sm:text-[11px] font-bold tracking-widest uppercase text-terracotta">
               <span className="w-6 h-[1.5px] bg-maroon inline-block rounded-full" />
@@ -58,13 +58,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             </div>
           </div>
 
-          {/* Right Column — Hero Illustration Container */}
+          {/* Right Column — Berlin Landmarks Hero Illustration */}
           <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end">
-            <div className="relative w-full max-w-[560px] transition-transform duration-300 hover:scale-[1.01]">
+            <div className="relative w-full max-w-[580px] transition-transform duration-300 hover:scale-[1.01]">
               <img
-                src="/images/collaborative-learning-success.png"
-                alt="Personalized German Coaching — Students Learning Together"
-                className="w-full h-auto object-contain select-none"
+                src="/images/berlin-landmarks.png"
+                alt="Berlin Landmarks with Learning Callouts — Study, Work & Build a Career in Germany"
+                className="w-full h-auto object-contain select-none drop-shadow-sm"
               />
             </div>
           </div>
